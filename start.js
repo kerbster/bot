@@ -14,7 +14,7 @@ client.once('ready', () => {
 
 
 client.on('message', message =>{
-	if((handler.whenMessageContains('creator' || 'god') || message.content.startsWith(prefix)) || !message.author.bot) return;
+	if(!(handler.whenMessageContains('creator' || 'god') || message.content.startsWith(prefix)) || message.author.bot) return;
 	
 	if (handler.whenMessageContains('creator' || 'god')) {
 		message.channel.send('The Creator has appeared' , {tts:true} , {files: ['./images/creator.png']});
